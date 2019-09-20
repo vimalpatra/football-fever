@@ -1,0 +1,11 @@
+<div>
+    <input placeholder="Type to search..." #search type="text" (input)="inputSearch(search.value)">
+
+    <select #filter name="filter" id="" (change)="filterResults(filter.value)">
+      <option value="">Filter Results</option>
+      <option value="lt2">Less than or equal to 2 matches</option>
+      <option value="gt2">Greater than 2 matches</option>
+    </select>
+  <br>
+</div>
+  

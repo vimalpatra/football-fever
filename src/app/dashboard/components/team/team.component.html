@@ -1,0 +1,94 @@
+<h2 class="page-title">
+  Team Details
+</h2>
+
+<div class="container">
+  
+    <filter [sort]="sort" [players]="players" (filter)="onFilter($event)"></filter>
+
+    <table>
+      <thead>
+        <th (click)="setSort('name')" class="sortable">
+          Name
+          <span>
+              <ng-template [ngIf]="sort=='name'">
+                  <i class="material-icons">arrow_drop_up</i>
+              </ng-template>
+              <ng-template [ngIf]="sort=='_name'">
+                  <i class="material-icons">arrow_drop_down</i>
+              </ng-template>
+          </span>
+          
+        </th>
+        <th>
+          Jersey
+        </th>
+        <th>
+          Nationality
+        </th>
+        <th (click)="setSort('age')" class="sortable">
+          Age
+          <span>
+              <ng-template [ngIf]="sort=='age'">
+                  <i class="material-icons">arrow_drop_up</i>
+              </ng-template>
+              <ng-template [ngIf]="sort=='_age'">
+                  <i class="material-icons">arrow_drop_down</i>
+              </ng-template>
+          </span>
+        </th>
+        <th (click)="setSort('goals')" class="sortable">
+          Goals
+          <span>
+              <ng-template [ngIf]="sort=='goals'">
+                  <i class="material-icons">arrow_drop_up</i>
+              </ng-template>
+              <ng-template [ngIf]="sort=='_goals'">
+                  <i class="material-icons">arrow_drop_down</i>
+              </ng-template>
+          </span>
+        </th>
+        <th>
+          Position
+        </th>
+      </thead>
+      <tbody *ngIf="playersLength else noData">
+        <tr *ngFor="let p of filteredPlayers">
+          <td>
+            <a [routerLink]="['/profile', p.player_name]">{{ p.player_name }}</a>
+          </td>
+    
+          <td>
+            {{ p.player_number }}
+          </td>
+          
+          <td>
+            {{ p.player_country }}
+          </td>
+          
+          <td>
+            {{ p.player_age }}
+          </td>
+    
+          <td>
+            {{ p.player_goals }}
+          </td>
+    
+          <td>
+            {{ p.player_type }}
+          </td>
+        </tr>
+      </tbody>
+      
+      <ng-template #noData>
+        <blockquote>
+          No Data Found
+        </blockquote>
+      </ng-template>
+    </table>
+    
+    <!-- <pre>
+      {{ players | json }}
+    </pre> -->
+    
+</div>

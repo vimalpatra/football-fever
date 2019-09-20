@@ -1,0 +1,104 @@
+<div class="container">
+  <h2 class="page-title">
+    Leagues and Fixtures
+  </h2>
+  
+  <div class="leagues row">
+    <div class="col-sm-6 col-xs-12">
+      <a 
+        routerLink="/events" 
+        [queryParams]="{ league: 149 }" 
+        class="leagues-title-holder"
+      >
+        <h2 class="league-title">Championship</h2>
+      
+        <span>
+          Click to See Fixtures
+        </span>
+      </a>
+    
+    </div>
+
+    <div class="col-sm-6 col-xs-12">
+      <a 
+        routerLink="/events"
+        [queryParams]="{ league: 156 }" 
+        class="leagues-title-holder"
+      >
+        <h2 class="league-title">NPL Premier Division</h2>
+      
+        <span>
+            Click to See Fixtures
+        </span>
+      </a>
+    
+    </div>
+    
+  </div>
+  
+  
+  
+  
+  
+  <div class="row" *ngIf="fixtures.length else spinner">
+    <ng-container *ngFor="let match of fixtures; let i = index;">
+  
+        <div class="card-container col-xs-12 col-md-6" *ngIf="i<15">
+          <section class="card" >        
+            <div class="card-wrapper">
+              <div class="row">
+                <div class="col-xs-5">
+                    <h2>
+                      {{ match.match_hometeam_name }}
+                    </h2>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-xs-offset-5 col-xs-2">
+                      <h2>
+                        vs
+                      </h2>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-offset-7 col-xs-5">
+                        <h2>
+                          {{ match.match_awayteam_name }}
+                        </h2>
+                    </div>
+                  </div>
+
+              <div class="score">
+                  <h4> Goals Scored</h4>
+                  <ul class="scorer-list">
+                    <li class="scorer-row row" *ngFor="let goal of match.goalscorer">
+                      <span class="col-xs-5">
+                        <em>{{ goal.home_scorer }}</em>
+                      </span>
+                      <span class="col-xs-2">- <strong>{{ goal.time }}</strong> -</span>
+                      <span class="col-xs-5">
+                          <em>{{ goal.away_scorer }}</em>
+                        </span>
+                      
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+  
+    </ng-container>
+    
+  </div>
+
+  <ng-template #spinner>
+    <app-spinner></app-spinner>
+  </ng-template>
+  
+  <!-- <br>
+  <br>
+  
+  <pre>
+    {{ fixtures | json }}
+  </pre> -->
+</div>

@@ -6,22 +6,30 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+What things you need to install the software and how to install them
 
-## Build
+```
+NODE
+LINUX TERMINAL / BASH
+NPM
+The git repo
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Installing
 
-## Running unit tests
+A step by step series of examples that tell you how to get a development env running
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Say what the step will be
 
-## Running end-to-end tests
+```
+'npm install' to install dep.
+'ng serve -o' to run in the browser
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Live Demo
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+https://infinite-hamlet-93491.herokuapp.com/
+```

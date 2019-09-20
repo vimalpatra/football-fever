@@ -1,0 +1,31 @@
+<div class="container">
+  <h2 class="page-title">
+    All Teams
+  </h2>
+  <ng-template #loader >
+      <app-spinner></app-spinner>
+  </ng-template>
+    
+  <div class="row center-xs" *ngIf="teams else loader">
+    <div 
+        class="card-container col-xs-12 col-sm-6 col-md-4" 
+        *ngFor="let team of teams"
+    >
+      <a
+        class="card" 
+        [routerLink]="['/team', team.team_key]"
+      >
+        
+        <h2 class="title">team name: {{ team.team_name }}</h2>
+        <img class="image" [src]="team.team_badge" alt="{{ team.team_name }}">
+  
+      </a>
+      
+    </div>
+  </div>
+  
+  <!-- <pre>
+    {{ teams | json }}
+  </pre> -->
+  
+</div>

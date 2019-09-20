@@ -1,0 +1,42 @@
+@import "~src/scss/vars";
+
+.leagues{
+    text-align: center;
+
+    &-title-holder{
+        display: block;
+        margin: 1rem 1.5rem;
+        padding: 1rem 1rem;
+        background: $secondary;
+        border-radius: 4px;
+        box-shadow:  inset 0 -4px 2px $primaryHighlight;
+    }
+
+    .league-title{
+        margin-top: 0;
+        font-family: $specialFont;
+        font-weight: 100;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: $milky-white;
+    }
+}
+
+.card{
+    text-align: center;
+    line-height: 1.5em;
+
+    &-wrapper{
+        width: 100%;
+    }
+}
+
+.score{
+    .scorer-row{
+        margin-bottom: 1rem;
+        padding: .5rem .2rem;
+        min-height: 50px;
+        font-size: 1rem;
+        border-bottom: 1px solid $milky-white;
+    }
+}

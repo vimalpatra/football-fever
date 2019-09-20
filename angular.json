@@ -27,8 +27,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/scss/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": []
+            },
             "scripts": [],
             "es5BrowserSupport": true
           },

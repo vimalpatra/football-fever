@@ -1,0 +1,26 @@
+<div class="container row">
+  <div class="card-container col-sm-offset-1 col-sm-10 col-xs-12">
+    <div class="card">
+      <h1>{{ profile.player_name }}</h1>
+      <h2>
+        Jersey: {{ profile.player_number }}
+      </h2>
+
+      <h4>
+        <i>{{ profile.player_type }}</i>
+      </h4>
+
+      <ul>
+        <h5>More Info</h5>
+        <li>Age: {{ profile.player_age }}</li>
+        <li>Matches Played: {{ profile.player_match_played }}</li>
+        <li>Yellow Cards: {{ profile.player_yellow_cards }}</li>
+        <li>Red Cards: {{ profile.player_red_cards }}</li>
+        <li><strong>Team: {{ profile.team_name }}</strong></li>
+      </ul>
+    </div>
+  </div> 
+</div>
+<!-- <pre>
+  {{ profile | json }}
+</pre> -->
