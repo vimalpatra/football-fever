@@ -1,6 +1,8 @@
 # FootballFever
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+This project is a test project showing Football teams and matches related information consuming APIs from apifootball.com.
+
+The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Development server
 
@@ -31,5 +33,8 @@ Say what the step will be
 Live Demo
 
 ```
-https://football-fever.herokuapp.com/
+Firebase App: https://football-fever-7e26a.firebaseapp.com/
+
+
+Heroku: https://football-fever.herokuapp.com/
 ```
