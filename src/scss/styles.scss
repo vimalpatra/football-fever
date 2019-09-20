@@ -1,0 +1,327 @@
+/* You can add global styles to this file, and also import other style files */
+@import "vars";
+
+@import "normalize";
+@import "base";
+
+
+@import "mixins";
+
+
+@import "~flexboxgrid-sass/flexboxgrid.scss";
+
+
+
+//// 
+
+header{
+  @include marginBleed;
+  position: relative;
+  min-height: 100vh;
+  margin-bottom: 4rem;
+  padding: 1px 5%;
+  background: url("https://source.unsplash.com/random/1200x900?champions%20league%20ground");
+  background-size: cover;
+  background-position: 50% 50%;
+  box-shadow: 0 3px 2px rgba(0,0,0,.15);
+
+  .backdrop{
+    @include absolute;
+    width: 100%;
+    height: 100%;
+    background: $secondary;
+    opacity: .7;
+    z-index: $z4;
+  }
+
+  
+  .rectangle{
+    @include absolute;
+    z-index: $z5;
+    height: 100%;
+    width: 50%;
+
+    @media (min-width: $laptops){
+      width: 35%;
+    }
+    
+    &:before{
+      @include pseudo;
+      width: 100%;
+      height: 100%;
+      background: darken($secondaryHighlight, 10%);
+      opacity: .35;
+      
+      @media (min-width: $laptops){
+        transform: scaleX(1.2) skew(-10deg);
+      }
+    }
+
+    &:after{
+      @include pseudo;
+      left: 20%;
+      height: 100%;
+      width: 1px;
+      background: $white;
+      opacity: .5;
+    }
+
+    
+    .date{
+      @include absolute;
+      display: inline-block;
+      z-index: $z6;
+      top: 50%;
+      left: calc(20% - 1rem);
+      padding: 5px 10px;
+      color: $white;
+      // background: $black;
+      font-size: 1.1rem;
+      font-weight: 800;
+      transform: translateX(-50%) rotateZ(-90deg);
+
+    }
+
+  }
+
+  h1{
+    position: relative;
+    z-index: $z6;
+    color: $white;
+    font-family: $specialFont;
+    font-size: 2rem;
+    font-weight: 100;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    
+    span{
+      display: inline-block;
+      background: $secondary;
+      padding: 15px;
+    }
+
+  }
+
+  .content{
+    margin-top: 100px;
+    margin-left: 7%;
+    padding: 0 20px;
+    width: 70%;
+    max-width: 650px;
+    position: relative;
+    z-index: $z6;
+  }
+
+  h2{ 
+    font-family: $primaryFont;
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 1.5em;
+    letter-spacing: .07em;
+    color: $white;
+    text-shadow: 0 2px 3px rgba(0,0,0,.15);
+  }
+
+  .cta{
+    min-width: 250px;
+    margin-top: 20px;
+    padding: .5rem 1rem;
+    font-family: $specialFont;
+    font-weight: 100;
+    font-size: 1.3rem;
+    text-align: center;
+    letter-spacing: .15em;
+    color: $white;
+    background: $primaryHighlight;
+    border: none;
+    text-shadow: -2px -2px 4px rgba(0,0,0,.2);
+    box-shadow: 0 10px 20px -5px darken($primaryHighlight, 25%);
+    transform: translateY(0);
+    transition: all .2s ease;
+    border-radius: 3px;
+
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      box-shadow: 0 10px 30px 0px darken($primaryHighlight, 25%);
+      transform: translateY(-5px);
+    }
+
+    i{
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1.2em;
+    }
+  }
+}
+
+
+
+
+
+.main{
+  @media (min-width: $laptops) {
+    padding-right: 50px;
+  }
+}
+
+.navbar-toggle{
+  @include fixed;
+  user-select: none;
+  z-index: $z10;
+  right: 10px;
+  top: 10px;
+  left: auto;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  letter-spacing: .05em;
+  line-height: 50px;
+  background: $primary;
+  color: $white;
+  cursor: pointer;
+  box-shadow: 0 0px 2px 3px rgba(6, 18, 124, .8);
+
+  @media (min-width: $laptops){
+    right: 60px;
+  }
+}
+.overlay{
+  @include fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: $black;
+  opacity: .4;
+  z-index: $z8;
+
+  &.active{
+    display: block;
+    cursor: not-allowed;
+  }
+}
+.navbar-container{
+    @include fixed;
+    z-index: $z9;
+    right: 0;
+    left: auto;
+    height: 100vh;
+    width: 100%;
+    transform: translateX(100%);
+    transition: all .2s ease-in;
+
+    &.active{
+      transform: translateX(0);
+      transition: all .3s ease-out;
+    }
+
+    @media (min-width: $tablets){
+      width: 30%;
+    }
+
+    @media (min-width: $laptops){
+      width: 20%;
+    }
+
+    .bg{
+      @include absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      &:after{
+        @include pseudo;
+        background: $primary;
+        border-left: 2px solid $gray;
+        z-index: $z3;
+        transform: translateX(-3px) scaleX(1) skew(0deg);
+        opacity: 1;
+
+        @media (min-width: $laptops){
+          transform: translateX(15%) scaleX(2) skew(-5deg);
+        }
+      }
+
+
+    } 
+
+  nav{
+    margin-top: 80px;
+    padding: 10px 20px;
+  }
+  a{
+    cursor: pointer;
+    user-select: none;
+    display: block;
+    padding: .7rem 0;
+    font-family: $secondaryFont;
+    font-size: 1.3rem;
+    font-variant: small-caps;
+    letter-spacing: .05em;
+    border-bottom: 3px solid $muted-gray;
+  }    
+
+}
+
+
+// modular css
+
+.page-title{
+  font-family: $secondaryFont;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 1px 0 lighten($black, 15%),
+               0 2px 0 lighten($black, 25%),
+               0 3px 0 lighten($black, 35%),
+               0 4px 0 lighten($black, 45%),
+               0 5px 0 lighten($black, 55%),
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.2),
+               0 3px 5px rgba(0,0,0,.15),
+               0 5px 10px rgba(0,0,0,.15),
+               0 10px 10px rgba(0,0,0,.15),
+               0 20px 20px rgba(0,0,0,.1);
+}
+.card-container{
+  padding: 20px 50px;
+}
+.card{
+  user-select: none;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $milky-white;
+  box-shadow: 0px 3px 0px 0px rgba(200, 200, 200, 0.05);
+  border: 1px solid #ebebeb;
+  transition: all linear .3s;
+
+  &:hover{
+    background: $milky-blue;
+    box-shadow: 0px 3px 0px 0px $cardHoverShadow;
+  }
+
+  .title{
+    flex: 1 1 auto;
+    font-family: $specialFont;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: .15em;
+    color: $black;
+
+  }
+  .image{
+    width: auto;
+    max-width: 100%;
+    flex: 0 1 auto;
+  }
+}
+
+
+
+    

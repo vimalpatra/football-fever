@@ -1,0 +1,31 @@
+
+// base styles
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: $primaryFont;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle farthest-side at 0% 50%,darken($white, 2%) 23.5%,rgba(240,166,17,0) 0)21px 30px,
+        radial-gradient(circle farthest-side at 0% 50%,$lightBluePattern 24%,rgba(240,166,17,0) 0)19px 30px,
+        linear-gradient(darken($white, 2%) 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,darken($white, 2%) 0)0 0,
+        linear-gradient(150deg,darken($white, 2%) 24%,$lightBluePattern 0,$lightBluePattern 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,$lightBluePattern 0,$lightBluePattern 76%,darken($white, 2%) 0)0 0,
+        linear-gradient(30deg,darken($white, 2%) 24%,$lightBluePattern 0,$lightBluePattern 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,$lightBluePattern 0,$lightBluePattern 76%,darken($white, 2%) 0)0 0,
+        linear-gradient(90deg,$lightBluePattern 2%,darken($white, 2%) 0,darken($white, 2%) 98%,$lightBluePattern 0%)0 0 darken($white, 2%);
+        background-size: 40px 60px;
+}
+a{
+    color: $white;
+    text-decoration: none;
+}
+
+
+.fluid-container{
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+}
+

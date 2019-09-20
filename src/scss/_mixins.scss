@@ -1,0 +1,52 @@
+
+
+// mixins
+
+	
+	   //	mixins
+
+//// utility mixins
+
+
+@mixin pseudo{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+}
+
+@mixin absolute{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@mixin fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+
+        //// helpers
+
+@mixin marginBleed{
+    padding: .1px;
+}
+
+@mixin block{
+    display: block !important;
+}
+
+
+/////// Hide visually and from screen readers
+ 
+
+@mixin hidden {
+    display: none !important;
+}
+
